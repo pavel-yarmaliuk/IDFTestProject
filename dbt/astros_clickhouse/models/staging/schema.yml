@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_astros
+    description: "Staging model for astronauts data"
+    columns:
+      - name: craft
+        description: "Spacecraft identifier"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['ISS', 'Tiangong', 'Crew Dragon', 'Soyuz', 'Shenzhou', 'Starliner', 'Unknown']
+      - name: name
+        description: "Astronaut full name"
+        tests:
+          - not_null
+      - name: valid_from
+        description: "When this record became valid"
+        tests:
+          - not_null
+      - name: valid_to
+        description: "When this record stopped being valid"

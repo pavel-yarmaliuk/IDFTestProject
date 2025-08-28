@@ -1,0 +1,14 @@
+astros_clickhouse:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      driver: http
+      host: localhost
+      port: 8123
+      database: kafka
+      schema: kafka
+      user: default
+      password: ''
+      cluster: null
+      secure: false

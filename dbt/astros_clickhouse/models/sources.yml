@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw_astros
+    database: kafka
+    schema: kafka
+    tables:
+      - name: astros_data
+        description: "Raw data from Astros API"
+        loaded_at_field: _inserted_at
+        columns:
+          - name: craft
+            description: "Spacecraft or station name"
+            tests:
+              - not_null
+          - name: name
+            description: "Astronaut name"
+            tests:
+              - not_null
+          - name: _inserted_at
+            description: "Timestamp when data was loaded"
